@@ -3,36 +3,20 @@ import pdfplumber
 from streamlit_option_menu import option_menu
 import plotly.express as px
 import random
-
-# ============================================
-# PAGE CONFIG
-# ============================================
-
 st.set_page_config(
     page_title="AI Resume Analyzer",
     page_icon="🤖",
     layout="wide"
 )
-
-# ============================================
-# PREMIUM UI
-# ============================================
-
 st.markdown("""
 <style>
-
-/* Main App */
 .stApp {
     background: linear-gradient(to right, #0f172a, #1e293b, #334155);
     color: white !important;
 }
-
-/* ALL TEXT WHITE */
 html, body, [class*="css"] {
     color: white !important;
 }
-
-/* Main Title */
 .main-title {
     font-size: 65px;
     font-weight: 900;
@@ -41,8 +25,6 @@ html, body, [class*="css"] {
     margin-bottom: 10px;
     text-shadow: 2px 2px 20px rgba(0,255,247,0.7);
 }
-
-/* Subtitle */
 .sub-title {
     text-align: center;
     font-size: 26px;
@@ -50,30 +32,20 @@ html, body, [class*="css"] {
     margin-bottom: 35px;
     font-weight: 600;
 }
-
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
     color: #00FFF7 !important;
     font-weight: bold;
 }
-
-/* Paragraphs */
 p, span, label, div {
     color: white !important;
 }
-
-/* Sidebar */
 section[data-testid="stSidebar"] {
     background: #111827;
 }
-
-/* Sidebar Text */
 section[data-testid="stSidebar"] * {
     color: white !important;
     font-size: 17px;
 }
-
-/* Buttons */
 .stButton>button {
     background: linear-gradient(90deg, #00FFF7, #38BDF8);
     color: black !important;
@@ -90,8 +62,6 @@ section[data-testid="stSidebar"] * {
 .stButton>button:hover {
     transform: scale(1.04);
 }
-
-/* Inputs */
 .stTextInput>div>div>input,
 .stTextArea textarea {
     background-color: #1e293b !important;
@@ -100,23 +70,17 @@ section[data-testid="stSidebar"] * {
     border: 2px solid #00FFF7;
     font-size: 18px;
 }
-
-/* Selectbox */
 .stSelectbox div[data-baseweb="select"] {
     background-color: #1e293b !important;
     color: white !important;
     border-radius: 12px;
 }
-
-/* Upload */
 [data-testid="stFileUploader"] {
     background-color: #1e293b;
     border-radius: 18px;
     padding: 15px;
     border: 2px dashed #00FFF7;
 }
-
-/* Metrics */
 [data-testid="metric-container"] {
     background: linear-gradient(145deg, #1e293b, #334155);
     border-radius: 18px;
@@ -124,8 +88,6 @@ section[data-testid="stSidebar"] * {
     border: 2px solid #00FFF7;
     box-shadow: 0px 0px 15px rgba(0,255,247,0.2);
 }
-
-/* WHITE TABS WITH BLACK TEXT */
 .stTabs [data-baseweb="tab"] {
     background-color: white !important;
     color: black !important;
@@ -139,8 +101,6 @@ section[data-testid="stSidebar"] * {
     background-color: #00FFF7 !important;
     color: black !important;
 }
-
-/* Footer */
 footer {
     visibility: hidden;
 }
@@ -161,11 +121,6 @@ st.markdown("""
 🔥 ATS Checker • Mock Interview • Career Roadmap • Skills Analyzer
 </div>
 """, unsafe_allow_html=True)
-
-# ============================================
-# SIDEBAR MENU
-# ============================================
-
 with st.sidebar:
 
     selected = option_menu(
@@ -193,10 +148,6 @@ with st.sidebar:
         menu_icon="cast",
         default_index=0
     )
-
-# ============================================
-# DASHBOARD
-# ============================================
 
 if selected == "Dashboard":
 
@@ -231,10 +182,6 @@ if selected == "Dashboard":
         st.success(feature)
 
     st.balloons()
-
-# ============================================
-# RESUME ANALYZER
-# ============================================
 
 elif selected == "Resume Analyzer":
 
@@ -362,10 +309,6 @@ elif selected == "Resume Analyzer":
             use_container_width=True
         )
 
-# ============================================
-# MOCK INTERVIEW
-# ============================================
-
 elif selected == "Mock Interview":
 
     st.title("🎤 AI Mock Interview")
@@ -436,10 +379,6 @@ elif selected == "Mock Interview":
 🏆 Score: 4/10
             """)
 
-# ============================================
-# CAREER ROADMAP
-# ============================================
-
 elif selected == "Career Roadmap":
 
     st.title("🚀 Career Roadmap")
@@ -467,10 +406,6 @@ elif selected == "Career Roadmap":
 ✅ Earn Certifications  
         """)
 
-# ============================================
-# PROJECT GENERATOR
-# ============================================
-
 elif selected == "Project Generator":
 
     st.title("💻 AI Project Generator")
@@ -493,11 +428,6 @@ elif selected == "Project Generator":
 ✅ Real World Project  
 ✅ Attractive UI  
         """)
-
-# ============================================
-# SKILLS GAP ANALYZER
-# ============================================
-
 elif selected == "Skills Gap Analyzer":
 
     st.title("📈 Skills Gap Analyzer")
@@ -525,10 +455,6 @@ elif selected == "Skills Gap Analyzer":
 ✅ Practice Daily  
         """)
 
-# ============================================
-# ABOUT
-# ============================================
-
 elif selected == "About":
 
     st.title("ℹ About AI Resume Analyzer")
@@ -546,11 +472,6 @@ An advanced AI-powered career assistant.
 ✅ Career Roadmap  
 ✅ Skills Gap Analyzer  
     """)
-
-# ============================================
-# FOOTER
-# ============================================
-
 st.markdown("---")
 
 st.caption("🚀 Developed using Streamlit")
