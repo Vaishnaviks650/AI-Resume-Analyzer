@@ -1,0 +1,5 @@
+streamlit
+pdfplumber
+plotly
+streamlit-option-menu
+pandas
